@@ -14,7 +14,7 @@ extension ChargerTabView {
         private(set) var chargerObserver: HCObserver?
         
         init() {
-            chargerObserver = try! HeyChargeSDK.sdk().chargers().observeChargers(
+            chargerObserver = HeyChargeSDK.sdk().chargers().observeChargers(
                 onError: { error in print("Error during observing chargers")},
                 onChange: { hcChargers in self.chargers = hcChargers})
         }
