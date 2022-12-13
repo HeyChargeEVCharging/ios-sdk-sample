@@ -12,7 +12,7 @@ import ios_sdk
 struct HeyChargeiOSApp: App {
     
     init() {
-        HeyChargeSDK(sdkKey: "KTrCsT64MbSBECjDejVNVKgu35n9t99G", userId: "CijZBYthXEe7cG204zBASNDJw2c2")
+        HeyChargeSDK.initialize(sdkKey: "KTrCsT64MbSBECjDejVNVKgu35n9t99G", userId: "CijZBYthXEe7cG204zBASNDJw2c2")
     }
     var body: some Scene {
         WindowGroup {
