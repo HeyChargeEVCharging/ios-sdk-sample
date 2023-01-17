@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ios_sdk
 
 struct LoginView: View {
     @State private var userInput: String = ""
-    
+    @State private var readyToNavigate: Bool = false
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack {
                 TextField("Enter your user Id here", text: $userInput)
                     .padding()
@@ -20,18 +21,29 @@ struct LoginView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                         .stroke(Color.green, lineWidth: 2)
-                        )
+                    )
                     .padding()
-                NavigationLink(destination: HomeView(userInput: userInput)) {
+                Button(action: {
+                    self.submit()
+                }) {
                     Text("Submit")
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.green)
                         .cornerRadius(5)
                 }
-                .padding()
-            }
+            .padding()
         }
+        .navigationTitle("iOS SDK testing")
+        .navigationDestination(isPresented: $readyToNavigate) {
+            HomeView()
+        }
+    }
+}
+    
+    func submit() {
+        HeyChargeSDK.setUserId(userId: userInput)
+        self.readyToNavigate = true
     }
 }
 

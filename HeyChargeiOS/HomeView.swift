@@ -9,7 +9,6 @@ import SwiftUI
 import ios_sdk
 
 struct HomeView: View {
-    var userInput: String
     
     var body: some View {
         TabView {
@@ -30,18 +29,11 @@ struct HomeView: View {
                 }
         }
         .accentColor(Color.green)
-        .onAppear{
-            self.setUserId(userId: self.userInput)
-        }
-    }
-    
-    func setUserId(userId: String) {
-        HeyChargeSDK.setUserId(userId: userId)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(userInput: "some user input")
+        HomeView()
     }
 }

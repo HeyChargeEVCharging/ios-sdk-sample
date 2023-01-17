@@ -19,13 +19,8 @@
 		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
 		6B7C306128F6D50000C6BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306028F6D50000C6BE91 /* Assets.xcassets */; };
 		6B7C306428F6D50000C6BE91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */; };
-		6B7C306B28F6D59400C6BE91 /* ChargerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C306A28F6D59400C6BE91 /* ChargerTabView.swift */; };
-		6B7C306D28F6D5AF00C6BE91 /* HistoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C306C28F6D5AF00C6BE91 /* HistoryTabView.swift */; };
-		6B7C306F28F6D5D500C6BE91 /* MoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C306E28F6D5D500C6BE91 /* MoreTabView.swift */; };
-		6B7C307128F6DC0700C6BE91 /* ChargerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C307028F6DC0700C6BE91 /* ChargerRowView.swift */; };
 		6B7C309328F745C200C6BE91 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7C308F28F7459100C6BE91 /* ios_sdk.framework */; };
 		6B7C309428F745C200C6BE91 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7C308F28F7459100C6BE91 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6B7C309728FB5E7700C6BE91 /* ChargerTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C309628FB5E7700C6BE91 /* ChargerTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,12 +66,7 @@
 		6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6B7C306028F6D50000C6BE91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6B7C306A28F6D59400C6BE91 /* ChargerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerTabView.swift; sourceTree = "<group>"; };
-		6B7C306C28F6D5AF00C6BE91 /* HistoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabView.swift; sourceTree = "<group>"; };
-		6B7C306E28F6D5D500C6BE91 /* MoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTabView.swift; sourceTree = "<group>"; };
-		6B7C307028F6DC0700C6BE91 /* ChargerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerRowView.swift; sourceTree = "<group>"; };
 		6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../../heycharge/ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
-		6B7C309628FB5E7700C6BE91 /* ChargerTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +107,6 @@
 				5236AD8D297193AE00FB911D /* Info.plist */,
 				6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */,
 				6B7C307528F6DEEF00C6BE91 /* Views */,
-				6B7C307228F6DEAE00C6BE91 /* Models */,
 				6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */,
 				6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */,
 				5236AD8529716E0500FB911D /* HomeView.swift */,
@@ -139,21 +128,9 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6B7C307228F6DEAE00C6BE91 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		6B7C307528F6DEEF00C6BE91 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6B7C306A28F6D59400C6BE91 /* ChargerTabView.swift */,
-				6B7C306C28F6D5AF00C6BE91 /* HistoryTabView.swift */,
-				6B7C306E28F6D5D500C6BE91 /* MoreTabView.swift */,
-				6B7C307028F6DC0700C6BE91 /* ChargerRowView.swift */,
-				6B7C309628FB5E7700C6BE91 /* ChargerTabViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,18 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7C306B28F6D59400C6BE91 /* ChargerTabView.swift in Sources */,
-				6B7C306D28F6D5AF00C6BE91 /* HistoryTabView.swift in Sources */,
 				5236AD8C297173CA00FB911D /* AdminView.swift in Sources */,
-				6B7C309728FB5E7700C6BE91 /* ChargerTabViewModel.swift in Sources */,
 				5236AD882971737000FB911D /* ChargersView.swift in Sources */,
 				6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */,
 				5236AD8A297173A500FB911D /* SessionsView.swift in Sources */,
-				6B7C307128F6DC0700C6BE91 /* ChargerRowView.swift in Sources */,
 				5236AD8629716E0500FB911D /* HomeView.swift in Sources */,
 				5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */,
 				6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */,
-				6B7C306F28F6D5D500C6BE91 /* MoreTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
