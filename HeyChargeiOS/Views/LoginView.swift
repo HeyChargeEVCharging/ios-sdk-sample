@@ -42,6 +42,10 @@ struct LoginView: View {
 }
     
     func submit() {
+        //for testing only, set userId by default
+        if(userInput.isEmpty){
+            userInput = "HWDYhoOQVCaYRKcfZSQ0vv9Sxtq1"
+        }
         HeyChargeSDK.setUserId(userId: userInput)
         self.readyToNavigate = true
     }

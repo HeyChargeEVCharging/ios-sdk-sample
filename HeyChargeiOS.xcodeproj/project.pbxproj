@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522935C329783440003B01C1 /* ChargersViewModel.swift */; };
 		5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD7F297164BE00FB911D /* SwiftProtobuf */; };
 		5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */; };
 		5236AD84297164BE00FB911D /* protoc-gen-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD83297164BE00FB911D /* protoc-gen-swift */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		522935C329783440003B01C1 /* ChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersViewModel.swift; sourceTree = "<group>"; };
 		5236AD8529716E0500FB911D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5236AD872971737000FB911D /* ChargersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersView.swift; sourceTree = "<group>"; };
 		5236AD89297173A500FB911D /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		522935C2297832E9003B01C1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				522935C329783440003B01C1 /* ChargersViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		6B7C305028F6D4FE00C6BE91 = {
 			isa = PBXGroup;
 			children = (
@@ -107,13 +117,8 @@
 				5236AD8D297193AE00FB911D /* Info.plist */,
 				6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */,
 				6B7C307528F6DEEF00C6BE91 /* Views */,
+				522935C2297832E9003B01C1 /* ViewModels */,
 				6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */,
-				6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */,
-				5236AD8529716E0500FB911D /* HomeView.swift */,
-				5236AD872971737000FB911D /* ChargersView.swift */,
-				5236AD8E297196B700FB911D /* ChargerCardView.swift */,
-				5236AD89297173A500FB911D /* SessionsView.swift */,
-				5236AD8B297173CA00FB911D /* AdminView.swift */,
 				6B7C306028F6D50000C6BE91 /* Assets.xcassets */,
 				6B7C306228F6D50000C6BE91 /* Preview Content */,
 			);
@@ -131,6 +136,12 @@
 		6B7C307528F6DEEF00C6BE91 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */,
+				5236AD8529716E0500FB911D /* HomeView.swift */,
+				5236AD872971737000FB911D /* ChargersView.swift */,
+				5236AD8E297196B700FB911D /* ChargerCardView.swift */,
+				5236AD89297173A500FB911D /* SessionsView.swift */,
+				5236AD8B297173CA00FB911D /* AdminView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */,
 				5236AD8A297173A500FB911D /* SessionsView.swift in Sources */,
 				5236AD8629716E0500FB911D /* HomeView.swift in Sources */,
+				522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */,
 				5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */,
 				6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */,
 			);
