@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		522935C329783440003B01C1 /* ChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersViewModel.swift; sourceTree = "<group>"; };
+		522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyChargeiOS.entitlements; sourceTree = "<group>"; };
 		5236AD8529716E0500FB911D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5236AD872971737000FB911D /* ChargersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersView.swift; sourceTree = "<group>"; };
 		5236AD89297173A500FB911D /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		6B7C305B28F6D4FE00C6BE91 /* HeyChargeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */,
 				5236AD8D297193AE00FB911D /* Info.plist */,
 				6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */,
 				6B7C307528F6DEEF00C6BE91 /* Views */,
@@ -397,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HeyChargeiOS/HeyChargeiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HeyChargeiOS/Preview Content\"";
@@ -427,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HeyChargeiOS/HeyChargeiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HeyChargeiOS/Preview Content\"";

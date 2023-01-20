@@ -11,7 +11,7 @@ import ios_sdk
     @Published private(set) var chargers: [Charger] = []
         
     init() {
-            
+        observeChargers()
     }
         
     init(fromChargers chargers: [Charger]) {

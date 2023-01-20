@@ -90,6 +90,8 @@ struct ChargerCardView: View {
     }
     
     func getChargerState() {
+        print("charger status: " + charger.bluetoothStatus.debugDescription)
+        
         if sdk.isChargerAvailable(charger: charger) {
             isButtonVisible = true
             statusText = "Available"
