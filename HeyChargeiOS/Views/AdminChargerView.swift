@@ -1,18 +1,17 @@
 //
-//  ChargerCardView.swift
+//  AdminChargerView.swift
 //  HeyChargeiOS
 //
-//  Created by Muhammad Mneimneh on 13.01.2023.
+//  Created by Andrew Vitrichenko on 25.01.2023.
 //
 
 import SwiftUI
 import ios_sdk
 
-struct ChargerCardView: View ,Identifiable,Equatable{
-    static func == (lhs: ChargerCardView, rhs: ChargerCardView) -> Bool {
+struct AdminChargerView: View ,Identifiable,Equatable{
+    static func == (lhs: AdminChargerView, rhs: AdminChargerView) -> Bool {
         lhs.charger == rhs.charger
     }
-    
     private let sdk = HeyChargeSDK.chargers()
     private let charger: Charger
     internal let id: String
@@ -34,27 +33,19 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         var isButtonVisible = false
         var statusColor: Color = .gray
         let onboardingRequired = charger.bluetoothStatus == ChargerState.notOnboarded
-        let isChargerAvailable = sdk.isChargerAvailable(charger: charger)
-        let isChargingByUser = sdk.isChargingByUser(charger: charger)
-        if (isChargerAvailable) {
-            buttonText = "Star charging"
-            statusText = "Available"
-            isButtonVisible = true
-            statusColor = .green
-        }
-        if (sdk.isChargerBusy(charger: charger)) {
-            statusText = "In use"
-        }
-        if (isChargingByUser) {
-            buttonText = "Stop charging"
-            statusText = "In use - self"
-            isButtonVisible = true
-            statusColor = .red
-        }
+        let updateAvailable = sdk.isChargerUpdateAvailable(charger: charger)
         if (onboardingRequired) {
             statusText = "Not onboarded"
-            buttonText = "For admins only"
-            isButtonVisible = false
+            buttonText = "Complete setup"
+            isButtonVisible = true
+            statusColor = .blue
+        } else if (updateAvailable) {
+            statusText = "Update available"
+            buttonText = "Update"
+            isButtonVisible = true
+            statusColor = .blue
+        } else {
+            statusText = charger.bluetoothStatus.debugDescription
         }
         return VStack(alignment: .leading) {
             Text(charger.name)
@@ -79,7 +70,7 @@ struct ChargerCardView: View ,Identifiable,Equatable{
                 Spacer()
                 if isButtonVisible {
                     Button(action: {
-                        self.buttonClicked(isAvailable: isChargerAvailable, isChargingByUser: isChargingByUser)
+                        self.buttonClicked(isUpdateAvailable: updateAvailable, onboardingRequired: onboardingRequired)
                     }) {
                         Text(buttonText)
                     }
@@ -97,20 +88,23 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         }
     }
     
-    func buttonClicked(isAvailable: Bool, isChargingByUser: Bool) {
-        guard isAvailable || isChargingByUser else {return}
-        if(isAvailable){
-            sdk.startCharging(charger: charger) {
-                self.updateAlert(title: "Success", message: "Charging started.", success: true)
-            } onChargingCommandFailure: { error in
-                self.updateAlert(title: "Error", message: "Failed to start charging: \(error.localizedDescription)", success: false)
+    func buttonClicked(isUpdateAvailable: Bool, onboardingRequired: Bool) {
+        guard isUpdateAvailable || onboardingRequired else {return}
+        if(isUpdateAvailable){
+            sdk.startOtaUpdate(charger: charger) { error in
+                //todo
+            } otaCallbackOnUpdateFinished: {
+                //todo
+            } otaCallbackOnProgressUpdated: { progress in
+                //todo
             }
         } else {
-            sdk.stopCharging(charger: charger) {
-                self.updateAlert(title: "Success", message: "Charging stopped.", success: true)
+            sdk.startOnboarding(charger: charger) {
+                // todo
             } onChargingCommandFailure: { error in
-                self.updateAlert(title: "Error", message: "Failed to stop charging: \(error.localizedDescription)", success: false)
+                // todo
             }
+            
         }
     }
     
@@ -124,9 +118,9 @@ struct ChargerCardView: View ,Identifiable,Equatable{
 }
 
 
-struct ChargerCardView_Previews: PreviewProvider {
+struct AdminChargerView_Previews: PreviewProvider {
     static var previews: some View {
-        ChargerCardView(
+        AdminChargerView(
             charger: Charger(id: "1", name: "Garage charger", b2bId: "1", address: "1st floor", connectors: [], chargePoint: ChargePoint(firmwareVersion: "2.1", serialNumber: "234343", vendor: "chargersss"), type: .secureCharge, pricing: ChargerPricing(driverPrice: 42, heychargeMargin: 2.4, propertyMargin: 1.8, utilityPrice: 5), shouldSyncTime: true)
         )
     }

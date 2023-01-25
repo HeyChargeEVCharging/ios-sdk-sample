@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; };
 		39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39486B272981A2AB00DE7246 /* SessionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B262981A2AA00DE7246 /* SessionCardView.swift */; };
+		39486B292981A64D00DE7246 /* SessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B282981A64D00DE7246 /* SessionsViewModel.swift */; };
+		39486B2B2981BE0900DE7246 /* AdminChargerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B2A2981BE0800DE7246 /* AdminChargerView.swift */; };
 		522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522935C329783440003B01C1 /* ChargersViewModel.swift */; };
 		5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD7F297164BE00FB911D /* SwiftProtobuf */; };
 		5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */; };
@@ -16,7 +19,6 @@
 		5236AD8629716E0500FB911D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8529716E0500FB911D /* HomeView.swift */; };
 		5236AD882971737000FB911D /* ChargersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD872971737000FB911D /* ChargersView.swift */; };
 		5236AD8A297173A500FB911D /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD89297173A500FB911D /* SessionsView.swift */; };
-		5236AD8C297173CA00FB911D /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8B297173CA00FB911D /* AdminView.swift */; };
 		5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8E297196B700FB911D /* ChargerCardView.swift */; };
 		6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */; };
 		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
@@ -57,12 +59,14 @@
 
 /* Begin PBXFileReference section */
 		39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		39486B262981A2AA00DE7246 /* SessionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCardView.swift; sourceTree = "<group>"; };
+		39486B282981A64D00DE7246 /* SessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewModel.swift; sourceTree = "<group>"; };
+		39486B2A2981BE0800DE7246 /* AdminChargerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminChargerView.swift; sourceTree = "<group>"; };
 		522935C329783440003B01C1 /* ChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersViewModel.swift; sourceTree = "<group>"; };
 		522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyChargeiOS.entitlements; sourceTree = "<group>"; };
 		5236AD8529716E0500FB911D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5236AD872971737000FB911D /* ChargersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersView.swift; sourceTree = "<group>"; };
 		5236AD89297173A500FB911D /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
-		5236AD8B297173CA00FB911D /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		5236AD8D297193AE00FB911D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5236AD8E297196B700FB911D /* ChargerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerCardView.swift; sourceTree = "<group>"; };
 		6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyChargeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				522935C329783440003B01C1 /* ChargersViewModel.swift */,
+				39486B282981A64D00DE7246 /* SessionsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -152,7 +157,8 @@
 				5236AD872971737000FB911D /* ChargersView.swift */,
 				5236AD8E297196B700FB911D /* ChargerCardView.swift */,
 				5236AD89297173A500FB911D /* SessionsView.swift */,
-				5236AD8B297173CA00FB911D /* AdminView.swift */,
+				39486B262981A2AA00DE7246 /* SessionCardView.swift */,
+				39486B2A2981BE0800DE7246 /* AdminChargerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,13 +272,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5236AD8C297173CA00FB911D /* AdminView.swift in Sources */,
+				39486B2B2981BE0900DE7246 /* AdminChargerView.swift in Sources */,
 				5236AD882971737000FB911D /* ChargersView.swift in Sources */,
 				6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */,
+				39486B292981A64D00DE7246 /* SessionsViewModel.swift in Sources */,
 				5236AD8A297173A500FB911D /* SessionsView.swift in Sources */,
 				5236AD8629716E0500FB911D /* HomeView.swift in Sources */,
 				522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */,
 				5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */,
+				39486B272981A2AB00DE7246 /* SessionCardView.swift in Sources */,
 				6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
