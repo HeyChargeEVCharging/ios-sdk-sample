@@ -8,8 +8,19 @@
 import SwiftUI
 import ios_sdk
 
-struct ChargerCardView: View {
-    var charger: Charger
+struct ChargerCardView: View ,Identifiable,Equatable{
+    static func == (lhs: ChargerCardView, rhs: ChargerCardView) -> Bool {
+        lhs.charger == rhs.charger
+    }
+    
+    private let charger: Charger
+    internal let id: String
+    
+    init(charger: Charger) {
+        self.charger = charger
+        self.id = charger.id
+    }
+  
     //charger state props
     @State private var isButtonVisible = false
     @State private var statusText = ""
@@ -59,10 +70,14 @@ struct ChargerCardView: View {
         .cornerRadius(10)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 2))
         .onAppear() {
-            getChargerState()
+            updateChargerState()
         }
+        .onChange(of: charger, perform: { newValue in
+            updateChargerState()
+        })
         .alert(isPresented: $showAlert) {
             Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")) {
+                updateChargerState()
                 self.showAlert = false
             })
         }
@@ -73,14 +88,14 @@ struct ChargerCardView: View {
         case "Start charging":
             sdk.startCharging(charger: charger) {
                 self.updateAlert(title: "Success", message: "Charging started.", success: true)
-                self.getChargerState()
+                self.updateChargerState()
             } onChargingCommandFailure: { error in
                 self.updateAlert(title: "Error", message: "Failed to start charging: \(error.localizedDescription)", success: false)
             }
         case "Stop charging":
             sdk.stopCharging(charger: charger) {
                 self.updateAlert(title: "Success", message: "Charging stopped.", success: true)
-                self.getChargerState()
+                self.updateChargerState()
             } onChargingCommandFailure: { error in
                 self.updateAlert(title: "Error", message: "Failed to stop charging: \(error.localizedDescription)", success: false)
             }
@@ -89,9 +104,7 @@ struct ChargerCardView: View {
         }
     }
     
-    func getChargerState() {
-        print("charger status: " + charger.bluetoothStatus.debugDescription)
-        
+    func updateChargerState() {
         if sdk.isChargerAvailable(charger: charger) {
             isButtonVisible = true
             statusText = "Available"

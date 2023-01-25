@@ -7,28 +7,34 @@
 
 import Foundation
 import ios_sdk
-class ChargersViewModel: ObservableObject, GetDataCallbackProtocol  {
-    typealias T = [Charger]
+import Combine
+class ChargersViewModel: ObservableObject  {
     
     @Published private(set) var chargers: [Charger] = []
-        
+    
+    private var chargersCancellable: AnyCancellable?
+    
     init() {
         observeChargers()
     }
-        
+    
     init(fromChargers chargers: [Charger]) {
         self.chargers = chargers
     }
-        
+    
     func observeChargers() {
-        HeyChargeSDK.chargers().observeChargers(callback: self)
+        chargersCancellable?.cancel()
+        chargersCancellable = HeyChargeSDK.chargers().observeChargers(receiveCompletion: { result in
+            switch result {
+                       case .failure(let error): fatalError(error.localizedDescription)
+                       case .finished: print("finished called.")
+                       }
+        }, receiveValue: { chargers in
+            self.chargers = chargers
+        })
     }
     
-    func onGetDataSuccess(data: [ios_sdk.Charger]) {
-        self.chargers = data
-    }
-    
-    func onGetDataFailure(exception: ios_sdk.SDKError) {
-        fatalError(exception.localizedDescription)
+    deinit {
+        chargersCancellable?.cancel()
     }
 }

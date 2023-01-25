@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; };
+		39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522935C329783440003B01C1 /* ChargersViewModel.swift */; };
 		5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD7F297164BE00FB911D /* SwiftProtobuf */; };
 		5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */; };
@@ -20,21 +22,19 @@
 		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
 		6B7C306128F6D50000C6BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306028F6D50000C6BE91 /* Assets.xcassets */; };
 		6B7C306428F6D50000C6BE91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */; };
-		6B7C309328F745C200C6BE91 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7C308F28F7459100C6BE91 /* ios_sdk.framework */; };
-		6B7C309428F745C200C6BE91 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7C308F28F7459100C6BE91 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6B7C308E28F7459100C6BE91 /* PBXContainerItemProxy */ = {
+		39486B1D29813B7F00DE7246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */;
+			containerPortal = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6BC0D924273972F700A22393;
 			remoteInfo = "ios-sdk";
 		};
-		6B7C309028F7459100C6BE91 /* PBXContainerItemProxy */ = {
+		39486B1F29813B7F00DE7246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */;
+			containerPortal = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6BC0D92D273972F700A22393;
 			remoteInfo = "ios-sdkTests";
@@ -42,13 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6B7C309528F745C200C6BE91 /* Embed Frameworks */ = {
+		39486B2529813BFB00DE7246 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6B7C309428F745C200C6BE91 /* ios_sdk.framework in Embed Frameworks */,
+				39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 		522935C329783440003B01C1 /* ChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersViewModel.swift; sourceTree = "<group>"; };
 		522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyChargeiOS.entitlements; sourceTree = "<group>"; };
 		5236AD8529716E0500FB911D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6B7C306028F6D50000C6BE91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../../heycharge/ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5236AD84297164BE00FB911D /* protoc-gen-swift in Frameworks */,
+				39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */,
 				5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */,
-				6B7C309328F745C200C6BE91 /* ios_sdk.framework in Frameworks */,
 				5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39486B1929813B7F00DE7246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39486B1E29813B7F00DE7246 /* ios_sdk.framework */,
+				39486B2029813B7F00DE7246 /* ios-sdkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		522935C2297832E9003B01C1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +124,9 @@
 		6B7C305B28F6D4FE00C6BE91 /* HeyChargeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */,
 				522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */,
 				5236AD8D297193AE00FB911D /* Info.plist */,
-				6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */,
 				6B7C307528F6DEEF00C6BE91 /* Views */,
 				522935C2297832E9003B01C1 /* ViewModels */,
 				6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */,
@@ -148,15 +157,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		6B7C308A28F7459100C6BE91 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6B7C308F28F7459100C6BE91 /* ios_sdk.framework */,
-				6B7C309128F7459100C6BE91 /* ios-sdkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6B7C309228F745C200C6BE91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +174,7 @@
 				6B7C305528F6D4FE00C6BE91 /* Sources */,
 				6B7C305628F6D4FE00C6BE91 /* Frameworks */,
 				6B7C305728F6D4FE00C6BE91 /* Resources */,
-				6B7C309528F745C200C6BE91 /* Embed Frameworks */,
+				39486B2529813BFB00DE7246 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,8 +221,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6B7C308A28F7459100C6BE91 /* Products */;
-					ProjectRef = 6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */;
+					ProductGroup = 39486B1929813B7F00DE7246 /* Products */;
+					ProjectRef = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -233,18 +233,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6B7C308F28F7459100C6BE91 /* ios_sdk.framework */ = {
+		39486B1E29813B7F00DE7246 /* ios_sdk.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ios_sdk.framework;
-			remoteRef = 6B7C308E28F7459100C6BE91 /* PBXContainerItemProxy */;
+			remoteRef = 39486B1D29813B7F00DE7246 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6B7C309128F7459100C6BE91 /* ios-sdkTests.xctest */ = {
+		39486B2029813B7F00DE7246 /* ios-sdkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "ios-sdkTests.xctest";
-			remoteRef = 6B7C309028F7459100C6BE91 /* PBXContainerItemProxy */;
+			remoteRef = 39486B1F29813B7F00DE7246 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
