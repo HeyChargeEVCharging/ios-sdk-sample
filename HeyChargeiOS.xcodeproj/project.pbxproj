@@ -7,31 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; };
+		39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522935C329783440003B01C1 /* ChargersViewModel.swift */; };
+		5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD7F297164BE00FB911D /* SwiftProtobuf */; };
+		5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */; };
+		5236AD84297164BE00FB911D /* protoc-gen-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD83297164BE00FB911D /* protoc-gen-swift */; };
+		5236AD8629716E0500FB911D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8529716E0500FB911D /* HomeView.swift */; };
+		5236AD882971737000FB911D /* ChargersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD872971737000FB911D /* ChargersView.swift */; };
+		5236AD8A297173A500FB911D /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD89297173A500FB911D /* SessionsView.swift */; };
+		5236AD8C297173CA00FB911D /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8B297173CA00FB911D /* AdminView.swift */; };
+		5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8E297196B700FB911D /* ChargerCardView.swift */; };
 		6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */; };
-		6B7C305F28F6D4FE00C6BE91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* ContentView.swift */; };
+		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
 		6B7C306128F6D50000C6BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306028F6D50000C6BE91 /* Assets.xcassets */; };
 		6B7C306428F6D50000C6BE91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */; };
-		6B7C306B28F6D59400C6BE91 /* ChargerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C306A28F6D59400C6BE91 /* ChargerTabView.swift */; };
-		6B7C306D28F6D5AF00C6BE91 /* HistoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C306C28F6D5AF00C6BE91 /* HistoryTabView.swift */; };
-		6B7C306F28F6D5D500C6BE91 /* MoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C306E28F6D5D500C6BE91 /* MoreTabView.swift */; };
-		6B7C307128F6DC0700C6BE91 /* ChargerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C307028F6DC0700C6BE91 /* ChargerRowView.swift */; };
-		6B7C307428F6DEC100C6BE91 /* Charger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C307328F6DEC100C6BE91 /* Charger.swift */; };
-		6B7C309328F745C200C6BE91 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7C308F28F7459100C6BE91 /* ios_sdk.framework */; };
-		6B7C309428F745C200C6BE91 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7C308F28F7459100C6BE91 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6B7C309728FB5E7700C6BE91 /* ChargerTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C309628FB5E7700C6BE91 /* ChargerTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6B7C308E28F7459100C6BE91 /* PBXContainerItemProxy */ = {
+		39486B1D29813B7F00DE7246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */;
+			containerPortal = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6BC0D924273972F700A22393;
 			remoteInfo = "ios-sdk";
 		};
-		6B7C309028F7459100C6BE91 /* PBXContainerItemProxy */ = {
+		39486B1F29813B7F00DE7246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */;
+			containerPortal = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6BC0D92D273972F700A22393;
 			remoteInfo = "ios-sdkTests";
@@ -39,13 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6B7C309528F745C200C6BE91 /* Embed Frameworks */ = {
+		39486B2529813BFB00DE7246 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6B7C309428F745C200C6BE91 /* ios_sdk.framework in Embed Frameworks */,
+				39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,18 +56,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		522935C329783440003B01C1 /* ChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersViewModel.swift; sourceTree = "<group>"; };
+		522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyChargeiOS.entitlements; sourceTree = "<group>"; };
+		5236AD8529716E0500FB911D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5236AD872971737000FB911D /* ChargersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersView.swift; sourceTree = "<group>"; };
+		5236AD89297173A500FB911D /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
+		5236AD8B297173CA00FB911D /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
+		5236AD8D297193AE00FB911D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5236AD8E297196B700FB911D /* ChargerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerCardView.swift; sourceTree = "<group>"; };
 		6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyChargeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyChargeiOSApp.swift; sourceTree = "<group>"; };
-		6B7C305E28F6D4FE00C6BE91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6B7C306028F6D50000C6BE91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6B7C306A28F6D59400C6BE91 /* ChargerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerTabView.swift; sourceTree = "<group>"; };
-		6B7C306C28F6D5AF00C6BE91 /* HistoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabView.swift; sourceTree = "<group>"; };
-		6B7C306E28F6D5D500C6BE91 /* MoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTabView.swift; sourceTree = "<group>"; };
-		6B7C307028F6DC0700C6BE91 /* ChargerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerRowView.swift; sourceTree = "<group>"; };
-		6B7C307328F6DEC100C6BE91 /* Charger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charger.swift; sourceTree = "<group>"; };
-		6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../../heycharge/ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
-		6B7C309628FB5E7700C6BE91 /* ChargerTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +77,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7C309328F745C200C6BE91 /* ios_sdk.framework in Frameworks */,
+				5236AD84297164BE00FB911D /* protoc-gen-swift in Frameworks */,
+				39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */,
+				5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */,
+				5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39486B1929813B7F00DE7246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39486B1E29813B7F00DE7246 /* ios_sdk.framework */,
+				39486B2029813B7F00DE7246 /* ios-sdkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		522935C2297832E9003B01C1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				522935C329783440003B01C1 /* ChargersViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		6B7C305028F6D4FE00C6BE91 = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +124,12 @@
 		6B7C305B28F6D4FE00C6BE91 /* HeyChargeiOS */ = {
 			isa = PBXGroup;
 			children = (
-				6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */,
+				39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */,
+				522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */,
+				5236AD8D297193AE00FB911D /* Info.plist */,
 				6B7C307528F6DEEF00C6BE91 /* Views */,
-				6B7C307228F6DEAE00C6BE91 /* Models */,
+				522935C2297832E9003B01C1 /* ViewModels */,
 				6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */,
-				6B7C305E28F6D4FE00C6BE91 /* ContentView.swift */,
 				6B7C306028F6D50000C6BE91 /* Assets.xcassets */,
 				6B7C306228F6D50000C6BE91 /* Preview Content */,
 			);
@@ -118,33 +144,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6B7C307228F6DEAE00C6BE91 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				6B7C307328F6DEC100C6BE91 /* Charger.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		6B7C307528F6DEEF00C6BE91 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6B7C306A28F6D59400C6BE91 /* ChargerTabView.swift */,
-				6B7C306C28F6D5AF00C6BE91 /* HistoryTabView.swift */,
-				6B7C306E28F6D5D500C6BE91 /* MoreTabView.swift */,
-				6B7C307028F6DC0700C6BE91 /* ChargerRowView.swift */,
-				6B7C309628FB5E7700C6BE91 /* ChargerTabViewModel.swift */,
+				6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */,
+				5236AD8529716E0500FB911D /* HomeView.swift */,
+				5236AD872971737000FB911D /* ChargersView.swift */,
+				5236AD8E297196B700FB911D /* ChargerCardView.swift */,
+				5236AD89297173A500FB911D /* SessionsView.swift */,
+				5236AD8B297173CA00FB911D /* AdminView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		6B7C308A28F7459100C6BE91 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6B7C308F28F7459100C6BE91 /* ios_sdk.framework */,
-				6B7C309128F7459100C6BE91 /* ios-sdkTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6B7C309228F745C200C6BE91 /* Frameworks */ = {
@@ -164,13 +174,18 @@
 				6B7C305528F6D4FE00C6BE91 /* Sources */,
 				6B7C305628F6D4FE00C6BE91 /* Frameworks */,
 				6B7C305728F6D4FE00C6BE91 /* Resources */,
-				6B7C309528F745C200C6BE91 /* Embed Frameworks */,
+				39486B2529813BFB00DE7246 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = HeyChargeiOS;
+			packageProductDependencies = (
+				5236AD7F297164BE00FB911D /* SwiftProtobuf */,
+				5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */,
+				5236AD83297164BE00FB911D /* protoc-gen-swift */,
+			);
 			productName = HeyChargeiOS;
 			productReference = 6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -199,12 +214,15 @@
 				Base,
 			);
 			mainGroup = 6B7C305028F6D4FE00C6BE91;
+			packageReferences = (
+				5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+			);
 			productRefGroup = 6B7C305A28F6D4FE00C6BE91 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6B7C308A28F7459100C6BE91 /* Products */;
-					ProjectRef = 6B7C308928F7459100C6BE91 /* ios-sdk.xcodeproj */;
+					ProductGroup = 39486B1929813B7F00DE7246 /* Products */;
+					ProjectRef = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -215,18 +233,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6B7C308F28F7459100C6BE91 /* ios_sdk.framework */ = {
+		39486B1E29813B7F00DE7246 /* ios_sdk.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ios_sdk.framework;
-			remoteRef = 6B7C308E28F7459100C6BE91 /* PBXContainerItemProxy */;
+			remoteRef = 39486B1D29813B7F00DE7246 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6B7C309128F7459100C6BE91 /* ios-sdkTests.xctest */ = {
+		39486B2029813B7F00DE7246 /* ios-sdkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "ios-sdkTests.xctest";
-			remoteRef = 6B7C309028F7459100C6BE91 /* PBXContainerItemProxy */;
+			remoteRef = 39486B1F29813B7F00DE7246 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -248,14 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7C306B28F6D59400C6BE91 /* ChargerTabView.swift in Sources */,
-				6B7C307428F6DEC100C6BE91 /* Charger.swift in Sources */,
-				6B7C306D28F6D5AF00C6BE91 /* HistoryTabView.swift in Sources */,
-				6B7C309728FB5E7700C6BE91 /* ChargerTabViewModel.swift in Sources */,
-				6B7C305F28F6D4FE00C6BE91 /* ContentView.swift in Sources */,
-				6B7C307128F6DC0700C6BE91 /* ChargerRowView.swift in Sources */,
+				5236AD8C297173CA00FB911D /* AdminView.swift in Sources */,
+				5236AD882971737000FB911D /* ChargersView.swift in Sources */,
+				6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */,
+				5236AD8A297173A500FB911D /* SessionsView.swift in Sources */,
+				5236AD8629716E0500FB911D /* HomeView.swift in Sources */,
+				522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */,
+				5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */,
 				6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */,
-				6B7C306F28F6D5D500C6BE91 /* MoreTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,12 +399,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HeyChargeiOS/HeyChargeiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HeyChargeiOS/Preview Content\"";
-				DEVELOPMENT_TEAM = D5PVL36MT5;
+				DEVELOPMENT_TEAM = N3YF8647QG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HeyChargeiOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,12 +430,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HeyChargeiOS/HeyChargeiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HeyChargeiOS/Preview Content\"";
-				DEVELOPMENT_TEAM = D5PVL36MT5;
+				DEVELOPMENT_TEAM = N3YF8647QG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HeyChargeiOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -456,6 +478,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5236AD7F297164BE00FB911D /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobufPluginLibrary;
+		};
+		5236AD83297164BE00FB911D /* protoc-gen-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = "protoc-gen-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B7C305128F6D4FE00C6BE91 /* Project object */;
 }

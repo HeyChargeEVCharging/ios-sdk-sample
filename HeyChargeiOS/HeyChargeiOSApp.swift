@@ -10,13 +10,27 @@ import ios_sdk
 
 @main
 struct HeyChargeiOSApp: App {
+    //dev
+    private let testSdkKey = "KTrCsT64MbSBECjDejVNVKgu35n9t99G"
+    
+    @Environment(\.scenePhase) var scenePhase
     
     init() {
-        HeyChargeSDK.initialize(sdkKey: "KTrCsT64MbSBECjDejVNVKgu35n9t99G", userId: "CijZBYthXEe7cG204zBASNDJw2c2")
+        HeyChargeSDK.initialize(sdkKey: testSdkKey)
     }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                print("Active")
+            } else if newPhase == .inactive {
+                print("Inactive")
+            } else if newPhase == .background {
+                print("Background")
+            }
         }
     }
 }
