@@ -7,7 +7,9 @@
 
 import Foundation
 import ios_sdk
-@MainActor class ChargersViewModel: ObservableObject  {
+class ChargersViewModel: ObservableObject, GetDataCallbackProtocol  {
+    typealias T = [Charger]
+    
     @Published private(set) var chargers: [Charger] = []
         
     init() {
@@ -19,10 +21,14 @@ import ios_sdk
     }
         
     func observeChargers() {
-        HeyChargeSDK.chargers().observeChargers { error in
-            fatalError(error.localizedDescription)
-        } onGetDataSuccess: { chargersList in
-            self.chargers = chargersList
-        }
+        HeyChargeSDK.chargers().observeChargers(callback: self)
+    }
+    
+    func onGetDataSuccess(data: [ios_sdk.Charger]) {
+        self.chargers = data
+    }
+    
+    func onGetDataFailure(exception: ios_sdk.SDKError) {
+        fatalError(exception.localizedDescription)
     }
 }
