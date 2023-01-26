@@ -14,20 +14,18 @@ struct SessionsView: View {
     @StateObject var viewModel = SessionsViewModel()
     
     var body: some View {
-        NavigationView{
-            VStack{
-                DatePicker("Select date", selection: $pickedDate, in: ...Date.now, displayedComponents: .date).onChange(of: pickedDate, perform: { newValue in
-                    viewModel.observeSessions(pickedDate: newValue)
-                })
-                .onAppear{
-                    viewModel.observeSessions(pickedDate: pickedDate)
-                }
-                .padding(8.0)
-                Text("Current date is \(pickedDate.ISO8601Format())")
-                List{
-                    ForEach(viewModel.sessions) { session in
-                        SessionCardView(session: session)
-                    }
+        VStack{
+            DatePicker("Select date", selection: $pickedDate, in: ...Date.now, displayedComponents: .date).onChange(of: pickedDate, perform: { newValue in
+                viewModel.observeSessions(pickedDate: newValue)
+            })
+            .onAppear{
+                viewModel.observeSessions(pickedDate: pickedDate)
+            }
+            .padding(8.0)
+            Text("Current date is \(pickedDate.ISO8601Format())")
+            List{
+                ForEach(viewModel.sessions) { session in
+                    SessionCardView(session: session)
                 }
             }
         }

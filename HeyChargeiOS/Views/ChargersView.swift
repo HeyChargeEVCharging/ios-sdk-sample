@@ -15,7 +15,6 @@ struct ChargersView: View {
     
     @ViewBuilder
     var body: some View {
-        NavigationView{
             List{
                 ForEach(viewModel.chargers) { charger in
                     if(isAdminTab){
@@ -24,7 +23,6 @@ struct ChargersView: View {
                         ChargerCardView(charger: charger)
                     }
                 }
-            }
         }
     }
 }

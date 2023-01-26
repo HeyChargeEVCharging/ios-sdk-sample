@@ -25,8 +25,8 @@ struct ChargerCardView: View ,Identifiable,Equatable{
     //alert props
     @State private var showAlert = false
     @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var alertSuccess = true
+    @State private var alertMessage: String?
+    @State private var showButton = false
     
     var body: some View {
         var buttonText = "Not available"
@@ -65,7 +65,7 @@ struct ChargerCardView: View ,Identifiable,Equatable{
                 .italic()
                 .foregroundColor(.green)
             HStack {
-                Text("$\(charger.pricing.driverPrice)")
+                Text(statusText)
                     .font(.subheadline)
                     .foregroundColor(.green)
                 Spacer()
@@ -74,8 +74,6 @@ struct ChargerCardView: View ,Identifiable,Equatable{
                 Circle()
                     .frame(width: 20, height: 20)
                     .foregroundColor(statusColor)
-                Spacer()
-                Text(statusText)
                 Spacer()
                 if isButtonVisible {
                     Button(action: {
@@ -91,33 +89,35 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         .cornerRadius(10)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 2))
         .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")) {
+            Alert(title: Text(alertTitle), message: alertMessage != nil ? Text(alertMessage!) : nil, dismissButton: showButton ? .default(Text("OK")){
                 self.showAlert = false
-            })
+            } : nil)
         }
     }
     
     func buttonClicked(isAvailable: Bool, isChargingByUser: Bool) {
         guard isAvailable || isChargingByUser else {return}
         if(isAvailable){
+            self.updateAlert(title: "Starting charging...", message: nil, showButton: false)
             sdk.startCharging(charger: charger) {
-                self.updateAlert(title: "Success", message: "Charging started.", success: true)
+                self.updateAlert(title: "Charging started", message: nil, showButton: true)
             } onChargingCommandFailure: { error in
-                self.updateAlert(title: "Error", message: "Failed to start charging: \(error.localizedDescription)", success: false)
+                self.updateAlert(title: "Error", message: "Failed to start charging: \(error.localizedDescription)", showButton: true)
             }
         } else {
+            self.updateAlert(title: "Stopping charging...", message: nil, showButton: false)
             sdk.stopCharging(charger: charger) {
-                self.updateAlert(title: "Success", message: "Charging stopped.", success: true)
+                self.updateAlert(title: "Charging stopped", message: nil, showButton: true)
             } onChargingCommandFailure: { error in
-                self.updateAlert(title: "Error", message: "Failed to stop charging: \(error.localizedDescription)", success: false)
+                self.updateAlert(title: "Error", message: "Failed to stop charging: \(error.localizedDescription)", showButton: true)
             }
         }
     }
     
-    func updateAlert(title: String, message: String, success: Bool) {
+    func updateAlert(title: String, message: String?, showButton: Bool) {
         self.alertTitle = title
         self.alertMessage = message
-        self.alertSuccess = success
+        self.showButton = showButton
         self.showAlert = true
     }
     

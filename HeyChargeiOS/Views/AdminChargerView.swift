@@ -24,15 +24,18 @@ struct AdminChargerView: View ,Identifiable,Equatable{
     //alert props
     @State private var showAlert = false
     @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var alertSuccess = true
+    @State private var alertMessage: String?
+    @State private var showButton = false
+    
+    @State private var otaProgress = 0.0
+    @State private var showOta = false
     
     var body: some View {
         var buttonText = "Not available"
         var statusText = "Not in range"
         var isButtonVisible = false
         var statusColor: Color = .gray
-        let onboardingRequired = charger.bluetoothStatus == ChargerState.notOnboarded
+        let onboardingRequired = charger.bluetoothStatus == ChargerState.notOnboarded || charger.bluetoothStatus == ChargerState.onboarding
         let updateAvailable = sdk.isChargerUpdateAvailable(charger: charger)
         if (onboardingRequired) {
             statusText = "Not onboarded"
@@ -48,31 +51,36 @@ struct AdminChargerView: View ,Identifiable,Equatable{
             statusText = charger.bluetoothStatus.debugDescription
         }
         return VStack(alignment: .leading) {
-            Text(charger.name)
-                .font(.headline)
-                .foregroundColor(.green)
-            Text(charger.address)
-                .font(.subheadline)
-                .italic()
-                .foregroundColor(.green)
-            HStack {
-                Text("$\(charger.pricing.driverPrice)")
-                    .font(.subheadline)
+            if(showOta){
+                Text("Please stay close to the charger and wait till update finishes")
+                    .font(.headline)
                     .foregroundColor(.green)
-                Spacer()
-            }
-            HStack {
-                Circle()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(statusColor)
-                Spacer()
-                Text(statusText)
-                Spacer()
-                if isButtonVisible {
-                    Button(action: {
-                        self.buttonClicked(isUpdateAvailable: updateAvailable, onboardingRequired: onboardingRequired)
-                    }) {
-                        Text(buttonText)
+                ProgressView("Updating…", value: otaProgress, total: 100)
+            } else {
+                Text(charger.name)
+                    .font(.headline)
+                    .foregroundColor(.green)
+                Text(charger.address)
+                    .font(.subheadline)
+                    .italic()
+                    .foregroundColor(.green)
+                HStack {
+                    Text(statusText)
+                        .font(.subheadline)
+                        .foregroundColor(.green)
+                    Spacer()
+                }
+                HStack {
+                    Circle()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(statusColor)
+                    Spacer()
+                    if isButtonVisible {
+                        Button(action: {
+                            self.buttonClicked(isUpdateAvailable: updateAvailable, onboardingRequired: onboardingRequired)
+                        }) {
+                            Text(buttonText)
+                        }
                     }
                 }
             }
@@ -82,36 +90,42 @@ struct AdminChargerView: View ,Identifiable,Equatable{
         .cornerRadius(10)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 2))
         .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")) {
+            Alert(title: Text(alertTitle), message: alertMessage != nil ? Text(alertMessage!) : nil, dismissButton: showButton ? .default(Text("OK")){
                 self.showAlert = false
-            })
+            } : nil)
         }
     }
     
     func buttonClicked(isUpdateAvailable: Bool, onboardingRequired: Bool) {
         guard isUpdateAvailable || onboardingRequired else {return}
         if(isUpdateAvailable){
+            showOta = true
             sdk.startOtaUpdate(charger: charger) { error in
-                //todo
+                showOta = false
+                otaProgress = 0
+                self.updateAlert(title: "Error", message: "Failed to complete setup: \(error.localizedDescription)", showButton: true)
             } otaCallbackOnUpdateFinished: {
-                //todo
+                showOta = false
+                otaProgress = 0
+                self.updateAlert(title: "Charger update completed", message: nil, showButton: true)
             } otaCallbackOnProgressUpdated: { progress in
-                //todo
+                otaProgress = Double(progress)
             }
         } else {
+            self.updateAlert(title: "Setting up the charger...", message: nil, showButton: false)
             sdk.startOnboarding(charger: charger) {
-                // todo
+                self.updateAlert(title: "Charger setup completed", message: nil, showButton: true)
             } onChargingCommandFailure: { error in
-                // todo
+                self.updateAlert(title: "Error", message: "Failed to complete setup: \(error.localizedDescription)", showButton: true)
             }
             
         }
     }
     
-    func updateAlert(title: String, message: String, success: Bool) {
+    func updateAlert(title: String, message: String?, showButton: Bool) {
         self.alertTitle = title
         self.alertMessage = message
-        self.alertSuccess = success
+        self.showButton = showButton
         self.showAlert = true
     }
     
