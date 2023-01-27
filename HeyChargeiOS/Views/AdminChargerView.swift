@@ -35,7 +35,7 @@ struct AdminChargerView: View ,Identifiable,Equatable{
         var statusText = "Not in range"
         var isButtonVisible = false
         var statusColor: Color = .gray
-        let onboardingRequired = charger.bluetoothStatus == ChargerState.notOnboarded || charger.bluetoothStatus == ChargerState.onboarding
+        let onboardingRequired = sdk.isChargerRequiresSetup(charger: charger)
         let updateAvailable = sdk.isChargerUpdateAvailable(charger: charger)
         if (onboardingRequired) {
             statusText = "Not onboarded"
@@ -48,7 +48,7 @@ struct AdminChargerView: View ,Identifiable,Equatable{
             isButtonVisible = true
             statusColor = .blue
         } else {
-            statusText = charger.bluetoothStatus.debugDescription
+            statusText = String(describing: charger.bluetoothStatus ?? ChargerState.unknown)
         }
         return VStack(alignment: .leading) {
             if(showOta){

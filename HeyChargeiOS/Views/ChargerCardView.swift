@@ -33,16 +33,17 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         var statusText = "Not in range"
         var isButtonVisible = false
         var statusColor: Color = .gray
-        let onboardingRequired = charger.bluetoothStatus == ChargerState.notOnboarded
+        let onboardingRequired = sdk.isChargerRequiresSetup(charger: charger)
         let isChargerAvailable = sdk.isChargerAvailable(charger: charger)
         let isChargingByUser = sdk.isChargingByUser(charger: charger)
+        let isChargerBusy = sdk.isChargerBusy(charger: charger)
         if (isChargerAvailable) {
             buttonText = "Star charging"
             statusText = "Available"
             isButtonVisible = true
             statusColor = .green
         }
-        if (sdk.isChargerBusy(charger: charger)) {
+        if (isChargerBusy) {
             statusText = "In use"
         }
         if (isChargingByUser) {
