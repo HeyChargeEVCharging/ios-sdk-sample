@@ -2,13 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.heycharge.ios-sdk.fetchAndSync</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>bluetooth-central</string>
 		<string>fetch</string>
 	</array>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Required to connect to bluetooth chargers</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Required to connect to bluetooth chargers</string>
 </dict>
 </plist>
