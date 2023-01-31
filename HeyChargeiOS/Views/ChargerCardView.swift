@@ -13,6 +13,7 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         lhs.charger == rhs.charger
     }
     
+    private let sdk = HeyChargeSDK.chargers()
     private let charger: Charger
     internal let id: String
     
@@ -20,22 +21,43 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         self.charger = charger
         self.id = charger.id
     }
-  
-    //charger state props
-    @State private var isButtonVisible = false
-    @State private var statusText = ""
-    @State private var buttonText = ""
-    @State private var statusColor = Color(.gray)
+    
     //alert props
     @State private var showAlert = false
     @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var alertSuccess = true
+    @State private var alertMessage: String?
+    @State private var showButton = false
     
-    private let sdk = HeyChargeSDK.chargers()
-
     var body: some View {
-        VStack(alignment: .leading) {
+        var buttonText = "Not available"
+        var statusText = "Not in range"
+        var isButtonVisible = false
+        var statusColor: Color = .gray
+        let onboardingRequired = sdk.isChargerRequiresSetup(charger: charger)
+        let isChargerAvailable = sdk.isChargerAvailable(charger: charger)
+        let isChargingByUser = sdk.isChargingByUser(charger: charger)
+        let isChargerBusy = sdk.isChargerBusy(charger: charger)
+        if (isChargerAvailable) {
+            buttonText = "Star charging"
+            statusText = "Available"
+            isButtonVisible = true
+            statusColor = .green
+        }
+        if (isChargerBusy) {
+            statusText = "In use"
+        }
+        if (isChargingByUser) {
+            buttonText = "Stop charging"
+            statusText = "In use - self"
+            isButtonVisible = true
+            statusColor = .red
+        }
+        if (onboardingRequired) {
+            statusText = "Not onboarded"
+            buttonText = "For admins only"
+            isButtonVisible = false
+        }
+        return VStack(alignment: .leading) {
             Text(charger.name)
                 .font(.headline)
                 .foregroundColor(.green)
@@ -44,7 +66,7 @@ struct ChargerCardView: View ,Identifiable,Equatable{
                 .italic()
                 .foregroundColor(.green)
             HStack {
-                Text("$\(charger.pricing.driverPrice)")
+                Text(statusText)
                     .font(.subheadline)
                     .foregroundColor(.green)
                 Spacer()
@@ -54,11 +76,9 @@ struct ChargerCardView: View ,Identifiable,Equatable{
                     .frame(width: 20, height: 20)
                     .foregroundColor(statusColor)
                 Spacer()
-                Text(statusText)
-                Spacer()
                 if isButtonVisible {
                     Button(action: {
-                        self.buttonClicked()
+                        self.buttonClicked(isAvailable: isChargerAvailable, isChargingByUser: isChargingByUser)
                     }) {
                         Text(buttonText)
                     }
@@ -69,79 +89,39 @@ struct ChargerCardView: View ,Identifiable,Equatable{
         .background(Color.white)
         .cornerRadius(10)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.green, lineWidth: 2))
-        .onAppear() {
-            updateChargerState()
-        }
-        .onChange(of: charger, perform: { newValue in
-            updateChargerState()
-        })
         .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")) {
-                updateChargerState()
+            Alert(title: Text(alertTitle), message: alertMessage != nil ? Text(alertMessage!) : nil, dismissButton: showButton ? .default(Text("OK")){
                 self.showAlert = false
-            })
+            } : nil)
         }
     }
     
-    func buttonClicked() {
-        switch buttonText {
-        case "Start charging":
+    func buttonClicked(isAvailable: Bool, isChargingByUser: Bool) {
+        guard isAvailable || isChargingByUser else {return}
+        if(isAvailable){
+            self.updateAlert(title: "Starting charging...", message: nil, showButton: false)
             sdk.startCharging(charger: charger) {
-                self.updateAlert(title: "Success", message: "Charging started.", success: true)
-                self.updateChargerState()
+                self.updateAlert(title: "Charging started", message: nil, showButton: true)
             } onChargingCommandFailure: { error in
-                self.updateAlert(title: "Error", message: "Failed to start charging: \(error.localizedDescription)", success: false)
+                self.updateAlert(title: "Error", message: "Failed to start charging: \(error.localizedDescription)", showButton: true)
             }
-        case "Stop charging":
+        } else {
+            self.updateAlert(title: "Stopping charging...", message: nil, showButton: false)
             sdk.stopCharging(charger: charger) {
-                self.updateAlert(title: "Success", message: "Charging stopped.", success: true)
-                self.updateChargerState()
+                self.updateAlert(title: "Charging stopped", message: nil, showButton: true)
             } onChargingCommandFailure: { error in
-                self.updateAlert(title: "Error", message: "Failed to stop charging: \(error.localizedDescription)", success: false)
+                self.updateAlert(title: "Error", message: "Failed to stop charging: \(error.localizedDescription)", showButton: true)
             }
-        default:
-            return
         }
     }
     
-    func updateChargerState() {
-        if sdk.isChargerAvailable(charger: charger) {
-            isButtonVisible = true
-            statusText = "Available"
-            buttonText = "Start charging"
-            statusColor = .green
-        }
-        
-        if sdk.isChargerBusy(charger: charger) {
-            isButtonVisible = false
-            statusText = "In use"
-            buttonText = ""
-            statusColor = .red
-        }
-        
-        if sdk.isChargingByUser(charger: charger) {
-            isButtonVisible = true
-            statusText = "In use - self"
-            buttonText = "Stop charging"
-            statusColor = .red
-        }
-        
-        if charger.bluetoothStatus == .notOnboarded {
-            isButtonVisible = true
-            statusText = ""
-            buttonText = "Complete setup"
-            statusColor = .gray
-        }
-        
-    }
-    
-    func updateAlert(title: String, message: String, success: Bool) {
+    func updateAlert(title: String, message: String?, showButton: Bool) {
         self.alertTitle = title
         self.alertMessage = message
-        self.alertSuccess = success
+        self.showButton = showButton
         self.showAlert = true
     }
-
+    
 }
 
 

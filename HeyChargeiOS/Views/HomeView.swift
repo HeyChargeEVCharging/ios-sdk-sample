@@ -22,7 +22,7 @@ struct HomeView: View {
                     Image(systemName: "clock.fill")
                     Text("Sessions")
                 }
-            AdminView()
+            ChargersView(isAdminTab: true)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Admin")

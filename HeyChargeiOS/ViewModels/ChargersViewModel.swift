@@ -26,9 +26,9 @@ class ChargersViewModel: ObservableObject  {
         chargersCancellable?.cancel()
         chargersCancellable = HeyChargeSDK.chargers().observeChargers(receiveCompletion: { result in
             switch result {
-                       case .failure(let error): fatalError(error.localizedDescription)
-                       case .finished: print("finished called.")
-                       }
+            case .failure(let error): fatalError(error.localizedDescription)
+            case .finished: print("finished called.")
+            }
         }, receiveValue: { chargers in
             self.chargers = chargers
         })

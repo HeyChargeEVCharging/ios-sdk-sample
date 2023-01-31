@@ -7,39 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; };
-		39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39486B1E29813B7F00DE7246 /* ios_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39486B272981A2AB00DE7246 /* SessionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B262981A2AA00DE7246 /* SessionCardView.swift */; };
+		39486B292981A64D00DE7246 /* SessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B282981A64D00DE7246 /* SessionsViewModel.swift */; };
+		39486B2B2981BE0900DE7246 /* AdminChargerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B2A2981BE0800DE7246 /* AdminChargerView.swift */; };
+		394F4085298460C100C0BEDF /* heycharge_ios_sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 394F4084298460C100C0BEDF /* heycharge_ios_sdk */; };
 		522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522935C329783440003B01C1 /* ChargersViewModel.swift */; };
-		5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD7F297164BE00FB911D /* SwiftProtobuf */; };
-		5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */; };
-		5236AD84297164BE00FB911D /* protoc-gen-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 5236AD83297164BE00FB911D /* protoc-gen-swift */; };
 		5236AD8629716E0500FB911D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8529716E0500FB911D /* HomeView.swift */; };
 		5236AD882971737000FB911D /* ChargersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD872971737000FB911D /* ChargersView.swift */; };
 		5236AD8A297173A500FB911D /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD89297173A500FB911D /* SessionsView.swift */; };
-		5236AD8C297173CA00FB911D /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8B297173CA00FB911D /* AdminView.swift */; };
 		5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8E297196B700FB911D /* ChargerCardView.swift */; };
 		6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */; };
 		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
 		6B7C306128F6D50000C6BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306028F6D50000C6BE91 /* Assets.xcassets */; };
 		6B7C306428F6D50000C6BE91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306328F6D50000C6BE91 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		39486B1D29813B7F00DE7246 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6BC0D924273972F700A22393;
-			remoteInfo = "ios-sdk";
-		};
-		39486B1F29813B7F00DE7246 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6BC0D92D273972F700A22393;
-			remoteInfo = "ios-sdkTests";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		39486B2529813BFB00DE7246 /* Embed Frameworks */ = {
@@ -48,7 +29,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				39486B2429813BFB00DE7246 /* ios_sdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,13 +36,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ios-sdk.xcodeproj"; path = "../../ios-sdk/ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		39486B262981A2AA00DE7246 /* SessionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCardView.swift; sourceTree = "<group>"; };
+		39486B282981A64D00DE7246 /* SessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewModel.swift; sourceTree = "<group>"; };
+		39486B2A2981BE0800DE7246 /* AdminChargerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminChargerView.swift; sourceTree = "<group>"; };
 		522935C329783440003B01C1 /* ChargersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersViewModel.swift; sourceTree = "<group>"; };
 		522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyChargeiOS.entitlements; sourceTree = "<group>"; };
 		5236AD8529716E0500FB911D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5236AD872971737000FB911D /* ChargersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargersView.swift; sourceTree = "<group>"; };
 		5236AD89297173A500FB911D /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
-		5236AD8B297173CA00FB911D /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		5236AD8D297193AE00FB911D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5236AD8E297196B700FB911D /* ChargerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerCardView.swift; sourceTree = "<group>"; };
 		6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyChargeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,29 +58,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5236AD84297164BE00FB911D /* protoc-gen-swift in Frameworks */,
-				39486B2329813BFB00DE7246 /* ios_sdk.framework in Frameworks */,
-				5236AD82297164BE00FB911D /* SwiftProtobufPluginLibrary in Frameworks */,
-				5236AD80297164BE00FB911D /* SwiftProtobuf in Frameworks */,
+				394F4085298460C100C0BEDF /* heycharge_ios_sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39486B1929813B7F00DE7246 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				39486B1E29813B7F00DE7246 /* ios_sdk.framework */,
-				39486B2029813B7F00DE7246 /* ios-sdkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		522935C2297832E9003B01C1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				522935C329783440003B01C1 /* ChargersViewModel.swift */,
+				39486B282981A64D00DE7246 /* SessionsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -124,7 +94,6 @@
 		6B7C305B28F6D4FE00C6BE91 /* HeyChargeiOS */ = {
 			isa = PBXGroup;
 			children = (
-				39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */,
 				522935C5297958D4003B01C1 /* HeyChargeiOS.entitlements */,
 				5236AD8D297193AE00FB911D /* Info.plist */,
 				6B7C307528F6DEEF00C6BE91 /* Views */,
@@ -152,7 +121,8 @@
 				5236AD872971737000FB911D /* ChargersView.swift */,
 				5236AD8E297196B700FB911D /* ChargerCardView.swift */,
 				5236AD89297173A500FB911D /* SessionsView.swift */,
-				5236AD8B297173CA00FB911D /* AdminView.swift */,
+				39486B262981A2AA00DE7246 /* SessionCardView.swift */,
+				39486B2A2981BE0800DE7246 /* AdminChargerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,9 +152,7 @@
 			);
 			name = HeyChargeiOS;
 			packageProductDependencies = (
-				5236AD7F297164BE00FB911D /* SwiftProtobuf */,
-				5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */,
-				5236AD83297164BE00FB911D /* protoc-gen-swift */,
+				394F4084298460C100C0BEDF /* heycharge_ios_sdk */,
 			);
 			productName = HeyChargeiOS;
 			productReference = 6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */;
@@ -215,39 +183,16 @@
 			);
 			mainGroup = 6B7C305028F6D4FE00C6BE91;
 			packageReferences = (
-				5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				394F4083298460C100C0BEDF /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */,
 			);
 			productRefGroup = 6B7C305A28F6D4FE00C6BE91 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 39486B1929813B7F00DE7246 /* Products */;
-					ProjectRef = 39486B1829813B7F00DE7246 /* ios-sdk.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6B7C305828F6D4FE00C6BE91 /* HeyChargeiOS */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		39486B1E29813B7F00DE7246 /* ios_sdk.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ios_sdk.framework;
-			remoteRef = 39486B1D29813B7F00DE7246 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		39486B2029813B7F00DE7246 /* ios-sdkTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ios-sdkTests.xctest";
-			remoteRef = 39486B1F29813B7F00DE7246 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6B7C305728F6D4FE00C6BE91 /* Resources */ = {
@@ -266,13 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5236AD8C297173CA00FB911D /* AdminView.swift in Sources */,
+				39486B2B2981BE0900DE7246 /* AdminChargerView.swift in Sources */,
 				5236AD882971737000FB911D /* ChargersView.swift in Sources */,
 				6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */,
+				39486B292981A64D00DE7246 /* SessionsViewModel.swift in Sources */,
 				5236AD8A297173A500FB911D /* SessionsView.swift in Sources */,
 				5236AD8629716E0500FB911D /* HomeView.swift in Sources */,
 				522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */,
 				5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */,
+				39486B272981A2AB00DE7246 /* SessionCardView.swift in Sources */,
 				6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +284,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -390,6 +338,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -407,6 +356,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HeyChargeiOS/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Required to connect to bluetooth chargers";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Required to connect to bluetooth chargers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -417,11 +368,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khort.HeyChargeiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heycharge.ios.sdk.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -438,6 +392,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HeyChargeiOS/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Required to connect to bluetooth chargers";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Required to connect to bluetooth chargers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -448,11 +404,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khort.HeyChargeiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heycharge.ios.sdk.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -480,31 +439,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+		394F4083298460C100C0BEDF /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			repositoryURL = "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5236AD7F297164BE00FB911D /* SwiftProtobuf */ = {
+		394F4084298460C100C0BEDF /* heycharge_ios_sdk */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = SwiftProtobuf;
-		};
-		5236AD81297164BE00FB911D /* SwiftProtobufPluginLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = SwiftProtobufPluginLibrary;
-		};
-		5236AD83297164BE00FB911D /* protoc-gen-swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5236AD7E297164BE00FB911D /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = "protoc-gen-swift";
+			package = 394F4083298460C100C0BEDF /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */;
+			productName = heycharge_ios_sdk;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

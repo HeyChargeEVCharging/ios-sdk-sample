@@ -25,11 +25,9 @@ struct HeyChargeiOSApp: App {
         }
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .active {
-                print("Active")
-            } else if newPhase == .inactive {
-                print("Inactive")
+                HeyChargeSDK.applicationWillEnterForeground()
             } else if newPhase == .background {
-                print("Background")
+                HeyChargeSDK.applicationDidEnterBackground()
             }
         }
     }
