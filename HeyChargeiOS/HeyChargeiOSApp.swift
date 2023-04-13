@@ -11,7 +11,7 @@ import ios_sdk
 @main
 struct HeyChargeiOSApp: App {
     //dev
-    private let testSdkKey = "KTrCsT64MbSBECjDejVNVKgu35n9t99G"
+    private let testSdkKey = "hc_sdk_KTrCsT64MbSBECjDejVNVKgu35n9t99G"
     
     @Environment(\.scenePhase) var scenePhase
     
