@@ -11,16 +11,18 @@ import Combine
 class ChargersViewModel: ObservableObject  {
     
     @Published private(set) var chargers: [Charger] = []
-    @Published private(set) var properties: [String: String] = [:]
-    @Published var selectedPropertyID: String? = nil
+    var properties: [Property] = []
+    var selectedPropertyID: String? = nil
     
     private var chargersCancellable: AnyCancellable?
     
     init() {
-        if let propertiesDict = HeyChargeSDK.chargers().getUserPropertiesCombined() {
-            self.properties = propertiesDict
-            self.selectedPropertyID = propertiesDict.keys.first // Select the first property ID by default
-            self.selectedPropertyDidChange()
+        Task {
+                if let propertiesList = await HeyChargeSDK.chargers().getUserProperties(){
+                    self.properties = propertiesList
+                    self.selectedPropertyID = propertiesList.first?.id // Select the first property ID by default
+                    self.selectedPropertyDidChange()
+                }
         }
     }
     
@@ -44,7 +46,9 @@ class ChargersViewModel: ObservableObject  {
             case .finished: print("finished called.")
             }
         }, receiveValue: { chargers in
-            self.chargers = chargers
+            DispatchQueue.main.async { // Switch to the main thread before updating the @Published property
+                self.chargers = chargers
+            }
         })
     }
     

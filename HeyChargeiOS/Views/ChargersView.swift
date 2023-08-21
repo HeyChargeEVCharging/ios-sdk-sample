@@ -26,8 +26,8 @@ struct ChargersView: View {
                                                 viewModel.selectedPropertyDidChange()
                                             }
                                         )) {
-                                    ForEach(viewModel.properties.keys.sorted(), id: \.self) { propertyID in
-                                        Text(viewModel.properties[propertyID] ?? "") // Display the property name in the picker
+                                    ForEach(viewModel.properties) { property in
+                                        Text(property.name) // Display the property name in the picker
                                     }
                                 }
                                 .pickerStyle(MenuPickerStyle())
