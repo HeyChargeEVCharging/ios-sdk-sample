@@ -3,10 +3,10 @@
     {
       "identity" : "heycharge-ios-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk",
+      "location" : "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk.git",
       "state" : {
         "branch" : "main",
-        "revision" : "f2190fe41c335e66f759e05a103f1b2bbe8fec5b"
+        "revision" : "a80f1464f58f732dafa71691494fe5a4943f389b"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "0af9125c4eae12a4973fb66574c53a54962a9e1e",
-        "version" : "1.21.0"
+        "revision" : "ce20dc083ee485524b802669890291c0d8090170",
+        "version" : "1.22.1"
       }
     }
   ],

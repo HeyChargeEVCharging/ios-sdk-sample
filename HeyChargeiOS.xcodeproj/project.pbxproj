@@ -10,12 +10,12 @@
 		39486B272981A2AB00DE7246 /* SessionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B262981A2AA00DE7246 /* SessionCardView.swift */; };
 		39486B292981A64D00DE7246 /* SessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B282981A64D00DE7246 /* SessionsViewModel.swift */; };
 		39486B2B2981BE0900DE7246 /* AdminChargerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39486B2A2981BE0800DE7246 /* AdminChargerView.swift */; };
-		394F4085298460C100C0BEDF /* heycharge_ios_sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 394F4084298460C100C0BEDF /* heycharge_ios_sdk */; };
 		522935C429783440003B01C1 /* ChargersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522935C329783440003B01C1 /* ChargersViewModel.swift */; };
 		5236AD8629716E0500FB911D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8529716E0500FB911D /* HomeView.swift */; };
 		5236AD882971737000FB911D /* ChargersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD872971737000FB911D /* ChargersView.swift */; };
 		5236AD8A297173A500FB911D /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD89297173A500FB911D /* SessionsView.swift */; };
 		5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8E297196B700FB911D /* ChargerCardView.swift */; };
+		5254F5C92A71409400470F78 /* heycharge_ios_sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 5254F5C82A71409400470F78 /* heycharge_ios_sdk */; };
 		6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */; };
 		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
 		6B7C306128F6D50000C6BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306028F6D50000C6BE91 /* Assets.xcassets */; };
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				394F4085298460C100C0BEDF /* heycharge_ios_sdk in Frameworks */,
+				5254F5C92A71409400470F78 /* heycharge_ios_sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +152,7 @@
 			);
 			name = HeyChargeiOS;
 			packageProductDependencies = (
-				394F4084298460C100C0BEDF /* heycharge_ios_sdk */,
+				5254F5C82A71409400470F78 /* heycharge_ios_sdk */,
 			);
 			productName = HeyChargeiOS;
 			productReference = 6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */;
@@ -183,7 +183,7 @@
 			);
 			mainGroup = 6B7C305028F6D4FE00C6BE91;
 			packageReferences = (
-				394F4083298460C100C0BEDF /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */,
+				5254F5C72A71409400470F78 /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */,
 			);
 			productRefGroup = 6B7C305A28F6D4FE00C6BE91 /* Products */;
 			projectDirPath = "";
@@ -439,9 +439,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		394F4083298460C100C0BEDF /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */ = {
+		5254F5C72A71409400470F78 /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk";
+			repositoryURL = "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -450,9 +450,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		394F4084298460C100C0BEDF /* heycharge_ios_sdk */ = {
+		5254F5C82A71409400470F78 /* heycharge_ios_sdk */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 394F4083298460C100C0BEDF /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */;
+			package = 5254F5C72A71409400470F78 /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */;
 			productName = heycharge_ios_sdk;
 		};
 /* End XCSwiftPackageProductDependency section */

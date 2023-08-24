@@ -9,23 +9,49 @@ import SwiftUI
 import ios_sdk
 
 struct ChargersView: View {
-    
     var isAdminTab = false
     @StateObject var viewModel = ChargersViewModel()
     
     @ViewBuilder
     var body: some View {
-            List{
-                ForEach(viewModel.chargers) { charger in
-                    if(isAdminTab){
-                        AdminChargerView(charger: charger)
-                    } else {
-                        ChargerCardView(charger: charger)
+        if viewModel.properties.isEmpty {
+            Text("Loading...") // Show loading indicator while fetching properties
+        } else {
+            VStack {
+                if !viewModel.properties.isEmpty {
+                    Picker("Select Property", selection: Binding(
+                                            get: { viewModel.selectedPropertyID ?? "" },
+                                            set: { newValue in
+                                                viewModel.selectedPropertyID = newValue.isEmpty ? nil : newValue
+                                                viewModel.selectedPropertyDidChange()
+                                            }
+                                        )) {
+                                    ForEach(viewModel.properties) { property in
+                                        Text(property.name) // Display the property name in the picker
+                                    }
+                                }
+                                .pickerStyle(MenuPickerStyle())
+                                .padding(.horizontal)
+                            }
+                
+                List {
+                    if(viewModel.chargers.isEmpty){
+                        Text("The selected property does not have any assigned chargers...")
+                    }
+                    ForEach(viewModel.chargers) { charger in
+                        if (isAdminTab) {
+                            AdminChargerView(charger: charger)
+                        } else {
+                            ChargerCardView(charger: charger)
+                        }
                     }
                 }
+            }
         }
     }
 }
+
+
 
 struct ChargersView_Previews: PreviewProvider {
     static var previews: some View {
