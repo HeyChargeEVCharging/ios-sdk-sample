@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk.git",
       "state" : {
-        "branch" : "dev",
-        "revision" : "d08f94b2d5222f5898b6a7fba08d668ed932c78a"
+        "branch" : "main",
+        "revision" : "a80f1464f58f732dafa71691494fe5a4943f389b"
       }
     },
     {
