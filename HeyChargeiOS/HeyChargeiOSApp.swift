@@ -16,7 +16,7 @@ struct HeyChargeiOSApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     init() {
-        HeyChargeSDK.initialize(sdkKey: testSdkKey)
+       try? HeyChargeSDK.initialize(sdkKey: testSdkKey,region: HeyChargeRegion.eu)
     }
     
     var body: some Scene {

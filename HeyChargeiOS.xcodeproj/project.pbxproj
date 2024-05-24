@@ -443,7 +443,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk.git";
 			requirement = {
-				branch = main;
+				branch = develop;
 				kind = branch;
 			};
 		};
