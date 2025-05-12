@@ -15,7 +15,6 @@
 		5236AD882971737000FB911D /* ChargersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD872971737000FB911D /* ChargersView.swift */; };
 		5236AD8A297173A500FB911D /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD89297173A500FB911D /* SessionsView.swift */; };
 		5236AD8F297196B700FB911D /* ChargerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236AD8E297196B700FB911D /* ChargerCardView.swift */; };
-		5254F5C92A71409400470F78 /* heycharge_ios_sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 5254F5C82A71409400470F78 /* heycharge_ios_sdk */; };
 		6B7C305D28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305C28F6D4FE00C6BE91 /* HeyChargeiOSApp.swift */; };
 		6B7C305F28F6D4FE00C6BE91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7C305E28F6D4FE00C6BE91 /* LoginView.swift */; };
 		6B7C306128F6D50000C6BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7C306028F6D50000C6BE91 /* Assets.xcassets */; };
@@ -23,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		39486B2529813BFB00DE7246 /* Embed Frameworks */ = {
+		393095742DD22E5F00D4DB7A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -58,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5254F5C92A71409400470F78 /* heycharge_ios_sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +142,7 @@
 				6B7C305528F6D4FE00C6BE91 /* Sources */,
 				6B7C305628F6D4FE00C6BE91 /* Frameworks */,
 				6B7C305728F6D4FE00C6BE91 /* Resources */,
-				39486B2529813BFB00DE7246 /* Embed Frameworks */,
+				393095742DD22E5F00D4DB7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,7 +150,6 @@
 			);
 			name = HeyChargeiOS;
 			packageProductDependencies = (
-				5254F5C82A71409400470F78 /* heycharge_ios_sdk */,
 			);
 			productName = HeyChargeiOS;
 			productReference = 6B7C305928F6D4FE00C6BE91 /* HeyChargeiOS.app */;
@@ -183,7 +180,6 @@
 			);
 			mainGroup = 6B7C305028F6D4FE00C6BE91;
 			packageReferences = (
-				5254F5C72A71409400470F78 /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */,
 			);
 			productRefGroup = 6B7C305A28F6D4FE00C6BE91 /* Products */;
 			projectDirPath = "";
@@ -437,25 +433,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5254F5C72A71409400470F78 /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeyChargeEVCharging/heycharge-ios-sdk.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5254F5C82A71409400470F78 /* heycharge_ios_sdk */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5254F5C72A71409400470F78 /* XCRemoteSwiftPackageReference "heycharge-ios-sdk" */;
-			productName = heycharge_ios_sdk;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B7C305128F6D4FE00C6BE91 /* Project object */;
 }
