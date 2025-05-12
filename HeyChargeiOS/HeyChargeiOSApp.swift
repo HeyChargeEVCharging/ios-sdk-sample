@@ -10,13 +10,11 @@ import ios_sdk
 
 @main
 struct HeyChargeiOSApp: App {
-    //dev
-    private let testSdkKey = "hc_sdk_KTrCsT64MbSBECjDejVNVKgu35n9t99G"
-    
+  
     @Environment(\.scenePhase) var scenePhase
     
     init() {
-       try? HeyChargeSDK.initialize(sdkKey: testSdkKey,region: HeyChargeRegion.eu)
+        try? HeyChargeSDK.initialize(sdkKey: "Insert sdk key here",region: HeyChargeRegion.eu)
     }
     
     var body: some Scene {

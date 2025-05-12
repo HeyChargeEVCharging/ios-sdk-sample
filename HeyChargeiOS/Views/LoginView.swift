@@ -43,7 +43,7 @@ struct LoginView: View {
     
     func submit() {
         //for testing only, set userId by default
-        HeyChargeSDK.setUserId(userId:"AWm5EVrbU5dGzOfOJLTmiiPISHh2")
+        HeyChargeSDK.setUserId(userId:"Insert user id here")
         self.readyToNavigate = true
     }
 }
